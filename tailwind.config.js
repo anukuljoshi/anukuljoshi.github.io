@@ -19,7 +19,9 @@ module.exports = {
     },
   },
   variants: {
-    extend: {},
+    extend: {
+      fontSize: ['hover', 'focus']
+    },
   },
   plugins: [],
 }
