@@ -26,7 +26,7 @@ function Home() {
 	}, []);
 
     return (
-        <div id="home" ref={titleHeading} className="h-screen relative">
+        <div id="home" ref={titleHeading} className="h-screen relative mb-10">
             <div className="absolute top-1/3 md:top-1/4 left-1/2 transform -translate-x-1/2">
                 <div className="flex justify-end">
                     <Cross bg={`secondary`} opacity={100} moveX={-30} moveY={0}></Cross>

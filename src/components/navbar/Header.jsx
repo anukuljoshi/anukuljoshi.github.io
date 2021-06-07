@@ -6,10 +6,10 @@ function Header(props) {
 	const { sidebarVisible, setSidebarVisible } = props;
 
 	return (
-		<header className="flex justify-end fixed top-5 right-5 z-50">
+		<header className="fixed top-5 right-5 z-50">
 			<div
 				onClick={() => setSidebarVisible(!sidebarVisible)}
-				className={`inline-flex flex-col items-center justify-evenly w-12 h-12 bg-transparent cursor-pointer`}
+				className={`flex flex-col items-center justify-evenly w-12 h-12 bg-transparent cursor-pointer`}
 			>
 				<span
 					className={`duration-500 w-11 h-2  ${
