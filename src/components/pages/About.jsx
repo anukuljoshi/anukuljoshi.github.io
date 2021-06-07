@@ -1,8 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 
 import { gsap } from 'gsap';
-import { ScrollTrigger } from 'gsap/ScrollTrigger';
-
 
 import certificate from '../../svgs/undraw_certificate.svg';
 import working from '../../svgs/undraw_working_from_anywhere.svg';
@@ -16,18 +14,9 @@ function About() {
     let skillsSvgContainer = useRef(null);
     let skillsSvgContainerMobile = useRef(null);
     let skillsContainer = useRef(null);
-    
-    gsap.registerPlugin(ScrollTrigger);
 
     useEffect(() => {
         let tl = gsap.timeline();
-        ScrollTrigger.defaults({
-            start: "top 90%",
-            end: "center 75%",
-            // markers: true,
-            toggleActions: "play none none none",
-            scrub: 1.5,
-        })
         tl.fromTo(sectionHeader.current, {
             duration: 0,
             yPercent: 50,
@@ -111,11 +100,11 @@ function About() {
     }, []);
 
     return (
-        <div className={`lg:px-32 md:px-20 px-8 mb-10`}>
+        <div className={`lg:px-32 md:px-20 px-8`}>
             <h1 
                 id="aboutHeader" 
                 ref={sectionHeader}
-                className={`lg:text-8xl md:text-7xl text-6xl font-cairo font-black text-primary lg:mb-20 mb-10`}>About Me</h1>
+                className={`lg:text-8xl md:text-7xl text-6xl font-cairo font-black text-primary lg:mb-16 mb-10`}>About Me</h1>
             <div className={`lg:flex gap-10 block lg:px-10 px-5 lg:mb-40 mb-20`}>
                 <div 
                     ref={descriptionSvgContainerMobile} className="lg:hidden flex">

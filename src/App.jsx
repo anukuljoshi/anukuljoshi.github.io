@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
 
+import { gsap } from 'gsap'
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
 import NavbarContainer from './layout/NavbarContainer';
 import Home from './components/pages/Home';
 import About from './components/pages/About';
@@ -10,7 +13,16 @@ import SocialLinks from './components/socials/SocialLinks';
 function App() {
 	const [pageLoading, setPageLoading] = useState(true);
 
+	
 	useEffect(() => {
+		gsap.registerPlugin(ScrollTrigger);
+        ScrollTrigger.defaults({
+            start: "top 90%",
+            end: "center 75%",
+            // markers: true,
+            toggleActions: "play none none none",
+            scrub: 1.5,
+        });
 		setPageLoading(false);
 	}, []);
 
