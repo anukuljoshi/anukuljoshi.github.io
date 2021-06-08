@@ -118,7 +118,7 @@ function About() {
                 <div 
                     id="descriptionContainer"
                     ref={descriptionContainer} 
-                    className={`flex items-center lg:w-8/12  mx-auto bg-gray-700 text-text shadow-lg px-10 lg:py-16 md:py-12 py-10`}>
+                    className={`flex items-center lg:w-8/12  mx-auto bg-foreground text-text shadow-lg px-10 lg:py-16 md:py-12 py-10`}>
                     <div className="w-full">
                         <h4 className="h4 font-bold text-primary mb-3">Hello, my name is <span className="text-secondary">Anukul Joshi.</span></h4>
                         <p className={`font-cairo px-2`}>
@@ -132,7 +132,7 @@ function About() {
                     <div className="lg:hidden block w-6/12"></div>
                     <img className="lg:w-full w-4/12 mx-auto" src={certificate} alt="About Me" />
                 </div>
-                <div ref={skillsContainer} className={`flex items-center lg:w-8/12  mx-auto bg-gray-700 text-text shadow-lg px-10 lg:py-16 md:py-12 py-10`}>
+                <div ref={skillsContainer} className={`flex items-center lg:w-8/12  mx-auto bg-foreground text-text shadow-lg px-10 lg:py-16 md:py-12 py-10`}>
                     <div className="w-full">
                         <h4 className="h4 font-bold mb-3 text-primary">Things I can work with.</h4>
                         <div className=" grid grid-cols-4">

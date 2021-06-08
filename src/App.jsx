@@ -18,7 +18,7 @@ function App() {
 		gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.defaults({
             start: "top 90%",
-            end: "center 75%",
+            end: "bottom 75%",
             // markers: true,
             toggleActions: "play none none none",
             scrub: 1.5,
