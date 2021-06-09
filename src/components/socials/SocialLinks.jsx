@@ -43,19 +43,19 @@ function SocialLinks() {
         <div className="hidden z-10 fixed left-5 lg:flex flex-col justify-center items-center text-gray-500">
             <div ref={line} className="h-28 w-1 bg-gray-500"></div>
             <a ref={link1} href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-linkedin text-3xl hover:text-secondary" onClick={handleLinkClick}></i>
+                <i className="fab fa-linkedin-in text-2xl hover:text-secondary" onClick={handleLinkClick}></i>
             </a>
             <a ref={link2} href="http://github.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-github-square text-3xl hover:text-secondary"></i>
+                <i className="fab fa-github text-2xl hover:text-secondary"></i>
             </a>
             <a ref={link3} href="http://twitter.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-twitter-square text-3xl hover:text-secondary"></i>
+                <i className="fab fa-twitter text-2xl hover:text-secondary"></i>
             </a>
             <a ref={link4} href="http://instagram.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-instagram-square text-3xl hover:text-secondary"></i>
+                <i className="fab fa-instagram text-2xl hover:text-secondary"></i>
             </a>
-            <a ref={link5} href="http://facebook.com" target="_blank" rel="noopener noreferrer">
-                <i className="fab fa-facebook-square text-3xl hover:text-secondary"></i>
+            <a ref={link5} href="http://codepen.io" target="_blank" rel="noopener noreferrer">
+                <i className="fab fa-codepen text-2xl hover:text-secondary"></i>
             </a>
         </div>
     );

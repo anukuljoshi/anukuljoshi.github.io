@@ -64,7 +64,7 @@ function Projects() {
 			<h3 className="h3 px-5 text-primary font-cairo mb-5 font-bold">
 				Components
 			</h3>
-			<div className="w-11/12 mx-auto grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1">
+			<div className="w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 mb-20">
 				<iframe
 					height="265"
 					style={{width: '100%'}}

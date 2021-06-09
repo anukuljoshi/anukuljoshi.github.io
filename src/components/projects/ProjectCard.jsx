@@ -141,7 +141,6 @@ function ProjectCard(props) {
                     key={index}
                     alt={`${name}_${index}`}
                 />
-                <div className="lg:block hidden absolute top-0 left-0 bottom-0 right-0 bg-secondary opacity-20 hover:opacity-0"></div>
             </div>
 		);
 	});
@@ -178,7 +177,7 @@ function ProjectCard(props) {
                         }
                     </div>
                 </div>
-                <div id="project-desc" className="z-10 py-5 px-5 mb-3 bg-foreground rounded-md text-right">
+                <div id="project-desc" className="z-10 py-5 px-5 mb-3 bg-foreground rounded-md text-right shadow-lg hover:shadow-2xl">
                     {
                         info.map((item, index) => {
                             return (
