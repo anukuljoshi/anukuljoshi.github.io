@@ -4,12 +4,25 @@ import { gsap } from "gsap";
 
 function ProjectCard(props) {
 	const { name, tech, info, photos, github, live } = props;
+
+	let projectCard = useRef(null);
 	let numPhotos = photos.length;
 	let [imageIndex, setImageIndex] = useState(0);
 	let [direction, setDirection] = useState(0);
 
 	let imageList = useRef(null);
 	let tl = useRef();
+
+	// animation for when card enters view port
+	useEffect(() => {
+		gsap.from(projectCard.current, {
+			y: "+=25",
+			opacity: 0,
+			scrollTrigger: {
+				trigger: projectCard.current
+			}
+		})
+	}, [])
 
 	const prevSlide = () => {
 		let newImageIndex = imageIndex - 1;
@@ -29,6 +42,7 @@ function ProjectCard(props) {
 		setDirection(1);
 	};
 
+	// animation for image slider
 	useEffect(() => {
 		tl.current = gsap.timeline();
 		for (let i = 0; i < numPhotos; i++) {
@@ -146,7 +160,7 @@ function ProjectCard(props) {
 	});
 
 	return (
-		<div className="w-11/12 mx-auto lg:h-72 lg:flex lg:gap-5 mb-16">
+		<div ref={projectCard} className="w-11/12 mx-auto lg:h-72 lg:flex lg:gap-5 mb-16">
 			<div className="lg:w-5/12 w-full h-full relative">
 				<div
 					onClick={prevSlide}

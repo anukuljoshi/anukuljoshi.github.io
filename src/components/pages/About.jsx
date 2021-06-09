@@ -9,6 +9,8 @@ import SectionTitle from '../elements/SectionTitle';
 
 
 function About() {
+    let desc = useRef(null);
+    let skills = useRef(null);
     let descriptionSvgContainer = useRef(null);
     let descriptionSvgContainerMobile = useRef(null);
     let descriptionContainer = useRef(null);
@@ -17,79 +19,26 @@ function About() {
     let skillsContainer = useRef(null);
 
     useEffect(() => {
-        let tl = gsap.timeline();
-        tl.fromTo(descriptionContainer.current, {
-            duration: 0,
-            xPercent: 150,
-        }, {
-            // duration: 2,
-            xPercent: 0,
-            ease: "ease",
+        gsap.from(desc.current, {
+            y: "+=25",
+            opacity: 0,
             scrollTrigger: {
-                trigger: descriptionContainer.current
-            },
+                trigger: desc.current
+            }
         });
-        tl.fromTo(descriptionSvgContainer.current, {
-            duration: 0,
-            xPercent: -150,
-        }, {
-            // duration: 2,
-            xPercent: 0,
-            ease: "ease",
+        gsap.from(skills.current, {
+            y: "+=25",
+            opacity: 0,
             scrollTrigger: {
-                trigger: descriptionSvgContainer.current
-            },
-        }, 'startAboutSection');
-        tl.fromTo(descriptionSvgContainerMobile.current, {
-            duration: 0,
-            xPercent: -150,
-        }, {
-            // duration: 2,
-            xPercent: 0,
-            ease: "ease",
-            scrollTrigger: {
-                trigger: descriptionSvgContainerMobile.current
-            },
-        });
-        tl.fromTo(skillsContainer.current, {
-            duration: 0,
-            xPercent: -150,
-        }, {
-            // duration: 2,
-            xPercent: 0,
-            ease: "ease",
-            scrollTrigger: {
-                trigger: skillsContainer.current
-            },
-        });
-        tl.fromTo(skillsSvgContainer.current, {
-            duration: 0,
-            xPercent: 150,
-        }, {
-            // duration: 2,
-            xPercent: 0,
-            ease: "ease",
-            scrollTrigger: {
-                trigger: skillsSvgContainer.current
-            },
-        });
-        tl.fromTo(skillsSvgContainerMobile.current, {
-            duration: 0,
-            xPercent: 150,
-        }, {
-            // duration: 2,
-            xPercent: 0,
-            ease: "ease",
-            scrollTrigger: {
-                trigger: skillsSvgContainerMobile.current
-            },
-        });
+                trigger: skills.current
+            }
+        })
     }, []);
 
     return (
         <div className={`lg:px-32 md:px-20 px-5`}>
             <SectionTitle title={'About Me'}></SectionTitle>
-            <div className={`lg:flex gap-10 block lg:px-10 px-5 lg:mb-40 mb-20`}>
+            <div ref={desc} className={`lg:flex gap-10 block lg:px-10 px-5 lg:mb-40 mb-20`}>
                 <div 
                     ref={descriptionSvgContainerMobile} className="lg:hidden flex">
                     <img className="w-4/12" src={working} alt="About Me" />
@@ -111,7 +60,7 @@ function About() {
                     </div>
                 </div>
             </div>
-            <div className={`lg:flex gap-10 block lg:px-10 px-5 lg:mb-40 mb-20`}>
+            <div ref={skills} className={`lg:flex gap-10 block lg:px-10 px-5 lg:mb-40 mb-20`}>
                 <div ref={skillsSvgContainerMobile} className="lg:hidden mx-auto flex items-center">
                     <div className="lg:hidden block w-6/12"></div>
                     <img className="lg:w-full w-4/12 mx-auto" src={certificate} alt="About Me" />

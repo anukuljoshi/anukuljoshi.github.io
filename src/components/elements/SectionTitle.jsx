@@ -9,19 +9,12 @@ function SectionTitle(props) {
 
     useEffect(() => {
         let tl = gsap.timeline();
-        tl.fromTo(sectionHeader.current, {
-            duration: 0,
-            yPercent: 50,
-            opacity: 0
-        }, {
-            duration: 1,
-            yPercent: 0,
-            opacity: 1,
-            ease: "ease",
+        tl.from(sectionHeader.current, {
+            y: "+=25",
+            opacity: 0,
             scrollTrigger: {
-                trigger: sectionHeader.current,
-                end: "bottom 60%"
-            },
+                trigger: sectionHeader.current
+            }
         });
     });
 
@@ -29,7 +22,7 @@ function SectionTitle(props) {
         <h1
             id="aboutHeader"
             ref={sectionHeader}
-            className={`lg:text-8xl md:text-7xl text-6xl font-cairo font-black text-secondary mb-10`}
+            className={`lg:text-8xl md:text-7xl text-6xl font-cairo font-black text-secondary lg:mb-16 mb-10`}
         >
             {title}
         </h1>

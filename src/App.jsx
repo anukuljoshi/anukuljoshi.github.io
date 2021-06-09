@@ -18,11 +18,10 @@ function App() {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.defaults({
-            // start: "top 90%",
-            // end: "bottom 90%",
+            start: "top 80%",
+            end: "top 80%",
             markers: true,
-            // toggleActions: "play none none none",
-            scrub: 1.5,
+            scrub: 1,
         });
 		setPageLoading(false);
 	}, []);

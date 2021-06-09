@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+
+import { gsap } from 'gsap';
 
 import SectionTitle from '../elements/SectionTitle';
 import ContactForm from "../contact/ContactForm";
@@ -8,6 +10,17 @@ function Contact() {
 	let link1 = useRef(null);
 	let link2 = useRef(null);
 	let link3 = useRef(null);
+	let contactForm = useRef(null);
+
+	useEffect(() => {
+		gsap.from(contactForm.current, {
+			y: "+=25",
+			opacity: 0,
+			scrollTrigger: {
+				trigger: contactForm.current
+			}
+		})
+	}, []);
 
 	const handleLinkClick = () => {
 		console.log("link");
@@ -16,7 +29,7 @@ function Contact() {
 	return (
 		<div id="contact" className="lg:px-32 md:px-20 px-5 font-cairo mb-32">
             <SectionTitle title={'Contact'}></SectionTitle>
-			<div className="lg:flex shadow-2xl">
+			<div ref={contactForm} className="lg:flex shadow-2xl">
 				<div className="lg:w-1/2 w-11/12 mx-auto bg-primary lg:px-10 px-8 py-10 flex flex-col justify-center items-center">
 					<h4 className="lg:text-5xl text-4xl font-bold text-bluebg lg:mb-5 mb-3">
 						Get in touch

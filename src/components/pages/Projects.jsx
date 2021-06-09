@@ -1,4 +1,6 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+
+import { gsap } from 'gsap';
 
 import SectionTitle from '../elements/SectionTitle'
 import ProjectCard from "../projects/ProjectCard";
@@ -18,10 +20,42 @@ import MobileFollower from "../../images/projects/social/mobile_follower.png";
 
 function Projects() {
 
+	let projectSubtitle = useRef(null);
+	let codepenSubtitle = useRef(null);
+	let codepenContainer = useRef(null);
+
+	// animation for when card enters view port
+	useEffect(() => {
+		gsap.from(projectSubtitle.current, {
+			y: "+=25",
+			opacity: 0,
+			scrollTrigger: {
+				trigger: projectSubtitle.current
+			}
+		});
+		gsap.from(codepenSubtitle.current, {
+			y: "+=25",
+			opacity: 0,
+			scrollTrigger: {
+				trigger: codepenSubtitle.current
+			}
+		});
+		gsap.from(codepenContainer.current.children, {
+			y: "+=25",
+			opacity: 0,
+			scrollTrigger: {
+				trigger: codepenContainer.current
+			},
+			stagger: {
+				amount: 0.5
+			}
+		})
+	}, [])
+	
 	return (
 		<div id="projects" className="lg:px-32 md:px-20 px-5">
 			<SectionTitle title={'My Work'}></SectionTitle>
-			<h3 className="h3 px-5 text-primary font-cairo mb-5 font-bold">
+			<h3 ref={projectSubtitle} className="h3 px-5 text-primary font-cairo mb-5 font-bold">
 				Projects
 			</h3>
 			<ProjectCard
@@ -55,10 +89,10 @@ function Projects() {
 				github={"https://github.com/anukuljoshi/sort-visualizer-v2"}
 				live={"http://anukuljoshi.pythonanywhere.com"}
 			></ProjectCard>
-			<h3 className="h3 px-5 text-primary font-cairo mb-5 font-bold">
+			<h3 ref={codepenSubtitle} className="h3 px-5 text-primary font-cairo mb-5 font-bold">
 				Components
 			</h3>
-			<div className="w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 mb-20">
+			<div ref={codepenContainer} className="w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 mb-20">
 				<iframe
 					height="265"
 					style={{width: '100%'}}

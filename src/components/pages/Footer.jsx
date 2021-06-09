@@ -1,18 +1,34 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
+
+import { gsap } from 'gsap';
 
 function Footer() {
+	let footer = useRef(null);
 	let link1 = useRef(null);
 	let link2 = useRef(null);
 	let link3 = useRef(null);
 	let link4 = useRef(null);
 	let link5 = useRef(null);
 
+	useEffect(() => {
+		gsap.from(footer.current.children, {
+			y: "+=25",
+			opacity: 0,
+			scrollTrigger: {
+				trigger: footer.current
+			},
+			stagger: {
+				amount: 0.5
+			}
+		})
+	}, []);
+
 	const handleLinkClick = () => {
 		console.log("link");
 	};
 
 	return (
-		<div className="text-center text-sm bg-foreground lg:px-32 md:px-20 px-5 font-cairo py-8 text-highlight relative">
+		<div ref={footer} className="text-center text-sm bg-foreground lg:px-32 md:px-20 px-5 font-cairo py-8 text-highlight relative">
 			<div className="w-full lg:hidden flex justify-center items-center gap-5 text-gray-400 mt-3 mb-5">
 				<a
 					ref={link1}
