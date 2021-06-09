@@ -8,6 +8,7 @@ import Home from './components/pages/Home';
 import About from './components/pages/About';
 import Projects from './components/pages/Projects';
 import Contact from './components/pages/Contact';
+import Footer from './components/pages/Footer';
 import SocialLinks from './components/socials/SocialLinks';
 
 function App() {
@@ -17,10 +18,10 @@ function App() {
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.defaults({
-            start: "top 90%",
-            end: "bottom 75%",
-            // markers: true,
-            toggleActions: "play none none none",
+            // start: "top 90%",
+            // end: "bottom 90%",
+            markers: true,
+            // toggleActions: "play none none none",
             scrub: 1.5,
         });
 		setPageLoading(false);
@@ -40,6 +41,7 @@ function App() {
 						<About></About>
 						<Projects></Projects>
 						<Contact></Contact>
+						<Footer></Footer>
 					</>
 				)
 			}

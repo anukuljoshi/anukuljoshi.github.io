@@ -5,9 +5,10 @@ import { gsap } from 'gsap';
 import certificate from '../../svgs/undraw_certificate.svg';
 import working from '../../svgs/undraw_working_from_anywhere.svg';
 
+import SectionTitle from '../elements/SectionTitle';
+
 
 function About() {
-    let sectionHeader = useRef(null);
     let descriptionSvgContainer = useRef(null);
     let descriptionSvgContainerMobile = useRef(null);
     let descriptionContainer = useRef(null);
@@ -17,25 +18,11 @@ function About() {
 
     useEffect(() => {
         let tl = gsap.timeline();
-        tl.fromTo(sectionHeader.current, {
-            duration: 0,
-            yPercent: 50,
-            opacity: 0
-        }, {
-            duration: 1,
-            yPercent: 0,
-            opacity: 1,
-            ease: "ease",
-            scrollTrigger: {
-                trigger: sectionHeader.current,
-                end: "bottom 60%"
-            },
-        });
         tl.fromTo(descriptionContainer.current, {
             duration: 0,
             xPercent: 150,
         }, {
-            duration: 2,
+            // duration: 2,
             xPercent: 0,
             ease: "ease",
             scrollTrigger: {
@@ -46,7 +33,7 @@ function About() {
             duration: 0,
             xPercent: -150,
         }, {
-            duration: 2,
+            // duration: 2,
             xPercent: 0,
             ease: "ease",
             scrollTrigger: {
@@ -57,7 +44,7 @@ function About() {
             duration: 0,
             xPercent: -150,
         }, {
-            duration: 2,
+            // duration: 2,
             xPercent: 0,
             ease: "ease",
             scrollTrigger: {
@@ -68,7 +55,7 @@ function About() {
             duration: 0,
             xPercent: -150,
         }, {
-            duration: 2,
+            // duration: 2,
             xPercent: 0,
             ease: "ease",
             scrollTrigger: {
@@ -79,7 +66,7 @@ function About() {
             duration: 0,
             xPercent: 150,
         }, {
-            duration: 2,
+            // duration: 2,
             xPercent: 0,
             ease: "ease",
             scrollTrigger: {
@@ -90,7 +77,7 @@ function About() {
             duration: 0,
             xPercent: 150,
         }, {
-            duration: 2,
+            // duration: 2,
             xPercent: 0,
             ease: "ease",
             scrollTrigger: {
@@ -100,11 +87,8 @@ function About() {
     }, []);
 
     return (
-        <div className={`lg:px-32 md:px-20 px-8`}>
-            <h1 
-                id="aboutHeader" 
-                ref={sectionHeader}
-                className={`lg:text-8xl md:text-7xl text-6xl font-cairo font-black text-primary lg:mb-16 mb-10`}>About Me</h1>
+        <div className={`lg:px-32 md:px-20 px-5`}>
+            <SectionTitle title={'About Me'}></SectionTitle>
             <div className={`lg:flex gap-10 block lg:px-10 px-5 lg:mb-40 mb-20`}>
                 <div 
                     ref={descriptionSvgContainerMobile} className="lg:hidden flex">

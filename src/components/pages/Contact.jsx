@@ -1,10 +1,9 @@
 import React, { useRef } from "react";
 
+import SectionTitle from '../elements/SectionTitle';
 import ContactForm from "../contact/ContactForm";
 
 function Contact() {
-	let sectionHeader = useRef();
-
 	// social links
 	let link1 = useRef(null);
 	let link2 = useRef(null);
@@ -13,16 +12,11 @@ function Contact() {
 	const handleLinkClick = () => {
 		console.log("link");
 	};
+
 	return (
-		<div id="contact" className="lg:px-32 md:px-20 px-8 font-cairo">
-			<h1
-				id="aboutHeader"
-				ref={sectionHeader}
-				className={`lg:text-8xl md:text-7xl text-6xl font-cairo font-black text-primary mb-10`}
-			>
-				Contact
-			</h1>
-			<div className="lg:flex mb-20">
+		<div id="contact" className="lg:px-32 md:px-20 px-5 font-cairo mb-32">
+            <SectionTitle title={'Contact'}></SectionTitle>
+			<div className="lg:flex shadow-2xl">
 				<div className="lg:w-1/2 w-11/12 mx-auto bg-primary lg:px-10 px-8 py-10 flex flex-col justify-center items-center">
 					<h4 className="lg:text-5xl text-4xl font-bold text-bluebg lg:mb-5 mb-3">
 						Get in touch
@@ -51,14 +45,6 @@ function Contact() {
 					<div className="w-full flex justify-center items-center gap-5 text-bluebg">
 						<a
 							ref={link1}
-							href="http://twitter.com"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<i className="fab fa-twitter text-3xl hover:text-text"></i>
-						</a>
-						<a
-							ref={link2}
 							href="http://linkedin.com"
 							target="_blank"
 							rel="noopener noreferrer"
@@ -67,6 +53,14 @@ function Contact() {
 								className="fab fa-linkedin-in text-3xl hover:text-text"
 								onClick={handleLinkClick}
 							></i>
+						</a>
+						<a
+							ref={link2}
+							href="http://twitter.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i className="fab fa-twitter text-3xl hover:text-text"></i>
 						</a>
 						<a
 							ref={link3}
@@ -78,7 +72,7 @@ function Contact() {
 						</a>
 					</div>
 				</div>
-				<div className="lg:w-1/2 w-11/12 mx-auto bg-foreground lg:px-10 px-8 py-10 flex flex-col justify-center ">
+				<div className="lg:w-1/2 w-11/12 mx-auto bg-foreground lg:px-10 px-8 py-6 flex flex-col justify-center ">
 					<ContactForm></ContactForm>
 				</div>
 			</div>

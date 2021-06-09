@@ -160,7 +160,7 @@ function ProjectCard(props) {
 				>
 					<i className="fa fa-angle-right"></i>
 				</div>
-				<div ref={imageList} className="relative h-72 lg:h-full overflow-hidden">
+				<div ref={imageList} className="relative h-72 lg:h-full overflow-hidden shadow-lg hover:shadow-2xl">
 					{photoSliderElement}
 				</div>
 			</div>
@@ -177,7 +177,7 @@ function ProjectCard(props) {
                         }
                     </div>
                 </div>
-                <div id="project-desc" className="z-10 py-5 px-5 mb-3 bg-foreground rounded-md text-right shadow-lg hover:shadow-2xl">
+                <div id="project-desc" className="z-10 py-5 px-5 mb-5 bg-foreground rounded-md text-right shadow-lg hover:shadow-2xl">
                     {
                         info.map((item, index) => {
                             return (

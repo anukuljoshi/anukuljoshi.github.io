@@ -41,7 +41,7 @@ function SocialLinks() {
     }
     return (
         <div className="hidden z-10 fixed left-5 lg:flex flex-col justify-center items-center text-gray-500">
-            <div ref={line} className="h-28 w-1 bg-gray-500"></div>
+            <div ref={line} className="h-28 w-0.5 bg-gray-500"></div>
             <a ref={link1} href="http://linkedin.com" target="_blank" rel="noopener noreferrer">
                 <i className="fab fa-linkedin-in text-2xl hover:text-secondary" onClick={handleLinkClick}></i>
             </a>

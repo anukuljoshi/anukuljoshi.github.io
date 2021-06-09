@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 
+import SectionTitle from '../elements/SectionTitle'
 import ProjectCard from "../projects/ProjectCard";
 
 import Sort from "../../images/projects/sort/main.png";
@@ -16,17 +17,10 @@ import MobilePost from "../../images/projects/social/mobile_post.png";
 import MobileFollower from "../../images/projects/social/mobile_follower.png";
 
 function Projects() {
-	let sectionHeader = useRef();
 
 	return (
-		<div id="projects" className="lg:px-32 md:px-20 px-8">
-			<h1
-				id="aboutHeader"
-				ref={sectionHeader}
-				className={`lg:text-8xl md:text-7xl text-6xl font-cairo font-black text-primary mb-10`}
-			>
-				My Work
-			</h1>
+		<div id="projects" className="lg:px-32 md:px-20 px-5">
+			<SectionTitle title={'My Work'}></SectionTitle>
 			<h3 className="h3 px-5 text-primary font-cairo mb-5 font-bold">
 				Projects
 			</h3>
