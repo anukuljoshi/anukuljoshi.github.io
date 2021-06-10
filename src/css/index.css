@@ -26,3 +26,7 @@ img{
 		width: 125%;
 	}
 }
+
+.lock-scroll {
+    overflow: hidden;
+}

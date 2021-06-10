@@ -1,70 +1,238 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef } from "react";
 
-import { gsap  } from 'gsap';
-// import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import { gsap } from "gsap";
+
+import Resume from "../../images/Anukul_Joshi_CV.pdf";
 
 function SidebarNav(props) {
-    const { sidebarVisible, setSidebarVisible } = props;
-    let sidebar = useRef(null);
-    let sidebarOverlay = useRef(null);
-    let navLinksContainer = useRef(null);
-    let homeLink = useRef(null);
-    let aboutLink = useRef(null);
-    let projectLink = useRef(null);
-    let contactLink = useRef(null);
+	const { sidebarVisible, setSidebarVisible } = props;
+	let sidebar = useRef(null);
+	let sidebarOverlay = useRef(null);
+	let navLinksContainer = useRef(null);
+	let navLinks = useRef(null);
+	let homeLink = useRef(null);
+	let aboutLink = useRef(null);
+	let projectLink = useRef(null);
+	let contactLink = useRef(null);
+    let resume = useRef(null);
 
-    let tl = useRef();
+	let links = useRef(null);
+	let link1 = useRef(null);
+	let link2 = useRef(null);
+	let link3 = useRef(null);
+	let link4 = useRef(null);
+	let link5 = useRef(null);
 
-    useEffect(() => {
-        tl.current = gsap.timeline({paused: true});
-        tl.current.addLabel('startSideNavbar');
-        tl.current.fromTo([sidebar.current, sidebarOverlay.current], {
-            duration: 0,
-            x: "100%"
-        }, {
-            duration: 1,
-            x: "0%",
-            ease: "power3.inOut",
-        }, 'startSideNavbar');
-        tl.current.fromTo([homeLink.current, aboutLink.current, projectLink.current, contactLink.current], {
-            duration: 0,
-            x: "150%",
-        }, {
-            duration: 1,
-            x: "0%",
-            ease: "power.inOut",
-            stagger: {
-                amount: 0.3
-            }
-        }, 'startSideNavbar')
-    }, []);
+	const handleLinkClick = () => {
+		console.log("link");
+	};
 
-    useEffect(() => {
-        sidebarVisible ? tl.current.play() : tl.current.reverse();
-    }, [sidebarVisible])
+	let tl = useRef();
 
-    const handleNavlinkClick = () => {
-        setSidebarVisible(!sidebarVisible);
-    }
+	console.log(sidebarVisible);
+	useEffect(() => {
+		tl.current = gsap.timeline({ paused: true });
+		tl.current.addLabel("navbarStart");
+		tl.current.fromTo(
+			sidebar.current,
+			{
+				xPercent: 100,
+				display: "flex",
+			},
+			{
+				duration: 0.5,
+				xPercent: 0,
+			},
+			"navbarStart"
+		);
+		tl.current.fromTo(
+			sidebarOverlay.current,
+			{
+				xPercent: 100,
+				display: "block",
+			},
+			{
+				duration: 0.5,
+				xPercent: 0,
+			},
+			"navbarStart"
+		);
+        tl.current.fromTo(
+            navLinks.current.children,
+            {
+                duration: 0,
+                xPercent: 1000,
+            },
+            {
+                duration: 0.5,
+                xPercent: 0,
+                ease: "power3",
+                stagger: {
+                    amount: 0.5,
+                },
+            },
+            "navbarStart"
+        );
+        tl.current.fromTo(
+            links.current.children,
+            {
+                duration: 0,
+                xPercent: 1500,
+            },
+            {
+                duration: 0.5,
+                xPercent: 0,
+                ease: "power3",
+                stagger: {
+                    amount: 0.5,
+                },
+            },
+            "navbarStart"
+        );
+        tl.current.fromTo(
+            resume.current,
+            {
+                duration: 0,
+                xPercent: 1200,
+            },
+            {
+                duration: 0.5,
+                xPercent: 0,
+                ease: "power3",
+                stagger: {
+                    amount: 0.5,
+                },
+            },
+            "navbarStart"
+        );
+	}, []);
 
-    const handleOverlayClick = () => {
-        setSidebarVisible(false);
-    }
+	useEffect(() => {
+		sidebarVisible ? tl.current.play() : tl.current.reverse();
+	}, [sidebarVisible]);
 
-    return (
-        <div>
-            <div ref={sidebarOverlay} className="hidden lg:block z-10 fixed top-0 left-0 bottom-0 right-0" onClick={handleOverlayClick}>
-            </div>
-            <nav ref={sidebar} className={`fixed top-0 bottom-0 right-0 z-20 h-screen w-screen md:w-1/3 bg-primary flex flex-col justify-center items-start}`}>
-                <div ref={navLinksContainer} className="md:w-8/12 w-10/12 mx-auto font-rubik md:text-6xl text-5xl font-bold flex flex-col text-backdrop text-center">
-                    <a ref={homeLink} href="#home" onClick={handleNavlinkClick} className="cursor-pointer hover:text-secondary pb-5">Home</a>
-                    <a ref={aboutLink} href="#about" onClick={handleNavlinkClick} className="cursor-pointer hover:text-secondary pb-5">About</a>
-                    <a ref={projectLink} href="#projects" onClick={handleNavlinkClick} className="cursor-pointer hover:text-secondary pb-5">Projects</a>
-                    <a ref={contactLink} href="#contact" onClick={handleNavlinkClick} className="cursor-pointer hover:text-secondary pb-5">Contact</a>
-                </div>
-            </nav>
-        </div>
-    )
+	const handleNavlinkClick = () => {
+		setSidebarVisible(!sidebarVisible);
+		document.body.classList.remove('lock-scroll');
+	};
+
+	const handleOverlayClick = () => {
+		setSidebarVisible(false);
+		document.body.classList.remove('lock-scroll');
+	};
+
+	return (
+		<div className="">
+			<div
+				ref={sidebarOverlay}
+				className="hidden z-30 fixed top-0 bottom-0 left-0 right-0"
+				onClick={handleOverlayClick}
+			></div>
+			<nav
+				ref={sidebar}
+				className={`z-40 fixed top-0 right-0 bottom-0 lg:w-1/4 md:1/2 w-full  px-10 flex flex-col justify-center bg-primary lg:text-4xl text-3xl font-cairo font-bold text-bluebg`}
+			>
+				<div
+
+                    ref={navLinksContainer}
+					className="flex flex-col justify-center h-full"
+				>   
+                    <div
+    					ref={navLinks}
+                        className="flex flex-col justify-center mb-16"
+                    >
+                        <a
+                            ref={homeLink}
+                            href="#home"
+                            onClick={handleNavlinkClick}
+                            className="cursor-pointer hover:text-text border-b-2 border-bluebg hover:border-text px-3 pb-3 pt-5"
+                        >
+                            Home
+                        </a>
+                        <a
+                            ref={aboutLink}
+                            href="#about"
+                            onClick={handleNavlinkClick}
+                            className="cursor-pointer hover:text-text border-b-2 border-bluebg hover:border-text px-3 pb-3 pt-5"
+                        >
+                            About
+                        </a>
+                        <a
+                            ref={projectLink}
+                            href="#projects"
+                            onClick={handleNavlinkClick}
+                            className="cursor-pointer hover:text-text border-b-2 border-bluebg hover:border-text px-3 pb-3 pt-5"
+                        >
+                            Portfolio
+                        </a>
+                        <a
+                            ref={contactLink}
+                            href="#contact"
+                            onClick={handleNavlinkClick}
+                            className="cursor-pointer hover:text-text border-b-2 border-bluebg hover:border-text px-3 pb-3 pt-5"
+                        >
+                            Contact
+                        </a>
+                    </div>
+
+					<div ref={links} className="flex gap-5 py-2 px-3">
+						<a
+							ref={link1}
+							href="http://linkedin.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i
+								className="fab fa-linkedin-in text-3xl hover:text-highlight"
+								onClick={handleLinkClick}
+							></i>
+						</a>
+						<a
+							ref={link2}
+							href="http://github.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i className="fab fa-github text-3xl hover:text-highlight"></i>
+						</a>
+						<a
+							ref={link3}
+							href="http://twitter.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i className="fab fa-twitter text-3xl hover:text-highlight"></i>
+						</a>
+						<a
+							ref={link4}
+							href="http://instagram.com"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i className="fab fa-instagram text-3xl hover:text-highlight"></i>
+						</a>
+						<a
+							ref={link5}
+							href="http://codepen.io"
+							target="_blank"
+							rel="noopener noreferrer"
+						>
+							<i className="fab fa-codepen text-3xl hover:text-highlight"></i>
+						</a>
+					</div>
+					<div ref={resume} className="px-3">
+						<a 
+                            className="px-3 border-2 border-bluebg text-xl font-semibold hover:text-text hover:bg-bluebg"
+                            href={Resume} 
+                            download
+                        >
+							Resume
+						</a>
+					</div>
+				</div>
+			</nav>
+		</div>
+	);
 }
 
-export default SidebarNav
+export default SidebarNav;

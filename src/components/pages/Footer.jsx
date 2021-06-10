@@ -86,17 +86,6 @@ function Footer() {
 					<i className="fab fa-github"></i> Source Code
 				</a>
 			</div>
-			<p>
-				Inspirations from {" "}
-				<a
-					className="hover:text-secondary"
-					href="https://brittanychiang.com/"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					brittanychiang.com.
-				</a>
-			</p>
 		</div>
 	);
 }

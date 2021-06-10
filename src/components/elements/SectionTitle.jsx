@@ -8,8 +8,7 @@ function SectionTitle(props) {
     let sectionHeader = useRef(null);
 
     useEffect(() => {
-        let tl = gsap.timeline();
-        tl.from(sectionHeader.current, {
+        gsap.from(sectionHeader.current, {
             y: "+=25",
             opacity: 0,
             scrollTrigger: {

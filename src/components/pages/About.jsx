@@ -36,7 +36,7 @@ function About() {
     }, []);
 
     return (
-        <div className={`lg:px-32 md:px-20 px-5`}>
+        <div id="about" className={`lg:px-32 md:px-20 px-5`}>
             <SectionTitle title={'About Me'}></SectionTitle>
             <div ref={desc} className={`lg:flex gap-10 block lg:px-10 px-5 lg:mb-40 mb-20`}>
                 <div 
@@ -68,26 +68,26 @@ function About() {
                 <div ref={skillsContainer} className={`flex items-center lg:w-8/12  mx-auto bg-foreground text-text shadow-lg px-10 lg:py-16 md:py-12 py-10`}>
                     <div className="w-full">
                         <h4 className="h4 font-bold mb-3 text-primary">Things I can work with.</h4>
-                        <div className=" grid grid-cols-4">
-                            <div>Python</div>
-                            <div>JavaScript</div>
-                            <div>HTML</div>
-                            <div>CSS</div>
-                            <div>Django</div>
-                            <div>React</div>
-                            <div>NodeJS</div>
-                            <div>Express</div>
-                            <div>TailwindCSS</div>
-                            <div>SQL</div>
-                            <div>BootStrap</div>
-                            <div>GSAP</div>
-                            <div>REST</div>
-                            <div>JSON</div>
-                            <div>MongoDB</div>
-                            <div>React-Query</div>
-                            <div>Redux</div>
-                            <div>Git</div>
-                        </div>
+                        <p>
+                            <span>{'Python '}</span>
+                            <span>{'JavaScript '}</span>
+                            <span>{'HTML '}</span>
+                            <span>{'CSS '}</span>
+                            <span>{'Django '}</span>
+                            <span>{'React '}</span>
+                            <span>{'NodeJS '}</span>
+                            <span>{'Express '}</span>
+                            <span>{'TailwindCSS '}</span>
+                            <span>{'SQL '}</span>
+                            <span>{'BootStrap '}</span>
+                            <span>{'GSAP '}</span>
+                            <span>{'REST '}</span>
+                            <span>{'JSON '}</span>
+                            <span>{'MongoDB '}</span>
+                            <span>{'React-Query '}</span>
+                            <span>{'Redux '}</span>
+                            <span>{'Git'}</span>
+                        </p>
                     </div>
                 </div>
                 <div ref={skillsSvgContainer} className="lg:flex hidden w-5/12 justify-start items-center">

@@ -14,14 +14,11 @@ import SocialLinks from './components/socials/SocialLinks';
 function App() {
 	const [pageLoading, setPageLoading] = useState(true);
 
-	
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
         ScrollTrigger.defaults({
             start: "top 80%",
             end: "top 80%",
-            markers: true,
-            scrub: 1,
         });
 		setPageLoading(false);
 	}, []);
