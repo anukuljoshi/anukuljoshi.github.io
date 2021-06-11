@@ -1,49 +1,109 @@
-import React, { useEffect, useRef } from 'react'
+import React, { createRef, useEffect, useRef } from "react";
 
-import gsap from 'gsap';
+import gsap from "gsap";
 
-import { setOffScreenLeft, setOffScreenRight } from '../../utils/gsap'
-
-import Circle from '../background/Circle';
-import Cross from '../background/Cross';
+import SocialLinks from "../elements/SocialLinks";
 
 function Home() {
-    const titleHeading = useRef(null);
-    const titleFirst = useRef(null);
-    const titleLast = useRef(null);
-    const subTitle = useRef(null);
+	const titleHeading = useRef(null);
+	const homeTextContainer = useRef(null);
+	const socialLinks = createRef();
+
+	let tl = gsap.timeline({ paused: true });
 
 	useEffect(() => {
-		let tl = gsap.timeline();
-		tl.set(titleFirst.current, { x: (i, el) => { return setOffScreenLeft(el)}});
-		tl.set(titleLast.current, { x: (i, el) => { return setOffScreenRight(el)}});
-		tl.addLabel('titleTextStart');
-		tl.to(titleFirst.current, { duration: 2, x: 0, ease: "ease"}, 'titleTextStart');
-		tl.to(titleLast.current, { duration: 2, x: 0, ease: "ease"}, 'titleTextStart');
-		tl.from(subTitle.current, { duration: 2, y: 0, opacity: 0, ease:"expo.in"}, 'titleTextStart');
-        tl.addLabel('textEnd');
-        // tl.
+		tl.to(titleHeading.current, {
+			autoAlpha: 1,
+		});
+		tl.addLabel("textStart");
+		tl.from(
+			homeTextContainer.current.children,
+			{
+				duration: 1,
+				opacity: 0,
+				y: "+=25",
+				stagger: {
+					amount: 0.5,
+				},
+			},
+			"textStart"
+		);
+		tl.addLabel("linksStart");
+		tl.to(
+			socialLinks.current,
+			{
+				autoAlpha: 1,
+			},
+			"linksStart"
+		);
+		tl.from(
+			socialLinks.current[0],
+			{
+				duration: 1,
+				yPercent: -100,
+			},
+			"linksStart"
+		);
+		tl.fromTo(
+			Array.prototype.slice.call(socialLinks.current.children, [1]),
+			{
+				duration: 0,
+				opacity: 0,
+				scaleX: 0,
+				scaleY: 0,
+			},
+			{
+				duration: 1,
+				opacity: 100,
+				scaleX: 1,
+				scaleY: 1,
+				ease: "ease",
+				stagger: {
+					amount: 0.5,
+				},
+			},
+			"linksStart"
+		);
 	}, []);
 
-    return (
-        <div id="home" ref={titleHeading} className="h-screen relative mb-10">
-            <div className="absolute top-1/3 md:top-1/4 left-1/2 transform -translate-x-1/2">
-                <div className="flex justify-end">
-                    <Cross bg={`secondary`} opacity={100} moveX={-30} moveY={0}></Cross>
-                    <Circle bg={`primary`} opacity={100} moveX={-30}moveY={0}></Circle>
-                </div>
-                <h1 className="h1 font-titil text-6xl md:text-9xl font-black flex gap-2 md:gap-5 text-secondary text-center">
-                    <span ref={titleFirst}>{`anukul`}</span>
-                    <span ref={titleLast}>{`Joshi`}</span>
-                </h1>
-                <h3 ref={subTitle} className="h3 text-lg md:text-4xl ml-1 font-cairo font-black text-secondary mb-1 md:mb-2">WEB DEVELOPER</h3>
-                <div className="flex">
-                    <Cross bg={`primary`} opacity={100} moveX={30} moveY={0}></Cross>
-                    <Circle bg={`secondary`} opacity={100} moveX={30} moveY={0}></Circle>
-                </div>
-            </div>
-        </div>
-    )
+	useEffect(() => {
+		tl.play();
+	}, []);
+
+	return (
+		<div
+			id="home"
+			ref={titleHeading}
+			className="invisible h-screen mb-10 font-cairo flex items-center justify-center"
+		>
+			<SocialLinks ref={socialLinks}></SocialLinks>
+			<div ref={homeTextContainer} className="flex flex-col -mt-24">
+				<h1 className="font-titil text-6xl md:text-9xl font-black text-secondary w-max">
+					{"anukul Joshi"}
+				</h1>
+				<h3
+					// ref={subTitle}
+					className="text-lg md:text-4xl font-titil font-black text-secondary -mt-2"
+				>
+					WEB DEVELOPER
+				</h3>
+				<div className="font-titil font-semibold flex gap-3 mt-2">
+					<a
+						className="inline-block border-2 px-3 py-1  border-green-500 hover:bg-green-500 text-green-500 hover:text-bluebg text-xl"
+						href="#projects"
+					>
+						Portfolio
+					</a>
+					<a
+						className="inline-block border-2 px-3 py-1  border-green-500 hover:bg-green-500 text-green-500 hover:text-bluebg text-xl"
+						href="#contact"
+					>
+						Get In Touch
+					</a>
+				</div>
+			</div>
+		</div>
+	);
 }
 
-export default Home
+export default Home;

@@ -25,7 +25,7 @@ function ProjectCardLeft(props) {
 			<div className="lg:w-5/12 w-full h-full relative">
 				<ImageSlider photos={photos} name={name}></ImageSlider>
 			</div>
-			<div className="lg:w-7/12 w-full h-full text-text lg:px-10 flex flex-col py-8 lg:py-0 lg:justify-end justify-center items-start font-cairo">
+			<div className="lg:w-7/12 w-full h-full text-text lg:px-10 flex flex-col py-8 lg:py-0 lg:justify-end justify-center items-end font-cairo ">
                 <div className="mb-3 text-right">
                     <h3 className="h3 font-cairo font-bold text-primary">{name}</h3>
                     <div className="text-xl font-bold font-cairo text-secondary flex gap-3 justify-end"> 

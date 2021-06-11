@@ -108,10 +108,9 @@ function Projects() {
 					scrolling="no"
 					title="infinite slide v2 (absolute position)"
 					src="https://codepen.io/anukuljoshi/embed/JjWBjKM?height=265&theme-id=dark&default-tab=result"
-					frameborder="no"
+					frameBorder="no"
 					loading="lazy"
-					allowtransparency="true"
-					allowfullscreen="true"
+					allowFullScreen={true}
 				>
 					See the Pen{" "}
 					<a href="https://codepen.io/anukuljoshi/pen/JjWBjKM">
@@ -127,10 +126,9 @@ function Projects() {
 					scrolling="no"
 					title="locked door"
 					src="https://codepen.io/anukuljoshi/embed/jOBvGEz?height=431&theme-id=dark&default-tab=result"
-					frameborder="no"
+					frameBorder="no"
 					loading="lazy"
-					allowtransparency="true"
-					allowfullscreen="true"
+					allowFullScreen={true}
 				>
 					See the Pen{" "}
 					<a href="https://codepen.io/anukuljoshi/pen/jOBvGEz">

@@ -43,7 +43,7 @@ function Contact() {
 						</p> */}
 						<p className="mb-2">
 							If you are interested in working together on a
-							project, want to hire me, have a quesion for me or
+							project, want to hire me, have a question for me or
 							just want to say hi!,
 						</p>
 						<p className="">

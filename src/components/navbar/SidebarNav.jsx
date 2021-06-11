@@ -6,6 +6,7 @@ import Resume from "../../images/Anukul_Joshi_CV.pdf";
 
 function SidebarNav(props) {
 	const { sidebarVisible, setSidebarVisible } = props;
+	let sidebarContainer = useRef(null);
 	let sidebar = useRef(null);
 	let sidebarOverlay = useRef(null);
 	let navLinksContainer = useRef(null);
@@ -29,15 +30,16 @@ function SidebarNav(props) {
 
 	let tl = useRef();
 
-	console.log(sidebarVisible);
 	useEffect(() => {
 		tl.current = gsap.timeline({ paused: true });
+		tl.current.to(sidebarContainer.current, {
+			autoAlpha: 1,
+		});
 		tl.current.addLabel("navbarStart");
 		tl.current.fromTo(
 			sidebar.current,
 			{
 				xPercent: 100,
-				display: "flex",
 			},
 			{
 				duration: 0.5,
@@ -122,7 +124,7 @@ function SidebarNav(props) {
 	};
 
 	return (
-		<div className="">
+		<div ref={sidebarContainer} className="invisible">
 			<div
 				ref={sidebarOverlay}
 				className="hidden z-30 fixed top-0 bottom-0 left-0 right-0"
