@@ -5,6 +5,8 @@ import { gsap } from 'gsap';
 import certificate from '../../svgs/undraw_certificate.svg';
 import working from '../../svgs/undraw_working_from_anywhere.svg';
 
+import { tech } from '../../utils/constants';
+
 import SectionTitle from '../elements/SectionTitle';
 
 
@@ -67,26 +69,18 @@ function About() {
                 </div>
                 <div ref={skillsContainer} className={`flex items-center lg:w-8/12  mx-auto bg-foreground text-text shadow-lg px-10 lg:py-16 md:py-12 py-10`}>
                     <div className="w-full">
-                        <h4 className="h4 font-bold mb-3 text-primary">Things I can work with.</h4>
+                        <h4 className="h4 font-bold mb-3 text-primary">Technologies I have worked with.</h4>
                         <p>
-                            <span>{'Python '}</span>
-                            <span>{'JavaScript '}</span>
-                            <span>{'HTML '}</span>
-                            <span>{'CSS '}</span>
-                            <span>{'Django '}</span>
-                            <span>{'React '}</span>
-                            <span>{'NodeJS '}</span>
-                            <span>{'Express '}</span>
-                            <span>{'TailwindCSS '}</span>
-                            <span>{'SQL '}</span>
-                            <span>{'BootStrap '}</span>
-                            <span>{'GSAP '}</span>
-                            <span>{'REST '}</span>
-                            <span>{'JSON '}</span>
-                            <span>{'MongoDB '}</span>
-                            <span>{'React-Query '}</span>
-                            <span>{'Redux '}</span>
-                            <span>{'Git'}</span>
+							{
+								tech.sort(() => Math.random() -0.5).map((skill, index) => {
+									return (
+										<span 
+											className="font-medium px-1"
+											style={{fontSize: `${skill.value*3}px`}} 
+											key={index}>{`${skill.name} `}</span>
+									)
+								})
+							}
                         </p>
                     </div>
                 </div>

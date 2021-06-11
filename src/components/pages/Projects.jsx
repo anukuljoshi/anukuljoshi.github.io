@@ -77,7 +77,7 @@ function Projects() {
 				tech={["Django", "ReactJS"]}
 				info={[
 					"A social network website where users can create small text posts.",
-					"Users can also follow each other and create and upvote/downvote posts.",
+					"Users can also follow each other and upvote/downvote posts.",
 				]}
 				photos={[
 					DesktopHome,

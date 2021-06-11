@@ -40,9 +40,7 @@ function Contact() {
 							Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias harum, illo enim debitis veritatis temporibus dolorum facilis sapiente tempora. Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
 						</p> */}
 						<p className="mb-2">
-							If you are interested in working together on a
-							project, want to hire me, have a question for me or
-							just want to say hi!,
+							If you are interested in talking with me for a project collaboration, want to hire me or have a question for me,
 						</p>
 						<p className="">
 							Feel free to drop me a message using the contact
@@ -50,7 +48,7 @@ function Contact() {
 							<strong className="text-bluebg">
 								anukuljoshi1@gmail.com
 							</strong>{" "}
-							or use one of my social media to connect with me.
+							or connect with me on one of my social media account.
 						</p>
 					</div>
 					<div className="w-full flex justify-center items-center gap-5 text-bluebg">

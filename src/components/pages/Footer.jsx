@@ -60,9 +60,7 @@ function Footer() {
 			</div>
 			<div className="lg:mb-4 mb-3">
 				<p className="lg:mb-4 mb-3">
-					Designed and Created by 
-					<br />
-					<a className="text-base" href="https://linkedin.com">Anukul Joshi</a>
+					This website was created with
 					<br />
 					with ReactJS, TailwindCSS and GSAP.
 				</p>

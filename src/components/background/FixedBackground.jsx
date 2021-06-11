@@ -5,6 +5,7 @@ const FixedBackground = () => {
     return (
         <div className="fixed h-screen w-screen" style={{zIndex: -1}}>
             <Particles
+				className="h-full w-full"
                 id="tsparticles"
                 options={{
                     background: {
