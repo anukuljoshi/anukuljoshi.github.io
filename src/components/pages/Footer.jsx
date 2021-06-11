@@ -1,14 +1,10 @@
 import React, { useRef, useEffect } from "react";
 
 import { gsap } from 'gsap';
+import { codepen, github, linkedin, twitter } from "../../utils/constants";
 
 function Footer() {
 	let footer = useRef(null);
-	let link1 = useRef(null);
-	let link2 = useRef(null);
-	let link3 = useRef(null);
-	let link4 = useRef(null);
-	let link5 = useRef(null);
 
 	useEffect(() => {
 		gsap.from(footer.current.children, {
@@ -31,8 +27,7 @@ function Footer() {
 		<div ref={footer} className="text-center text-sm bg-foreground lg:px-32 md:px-20 px-5 font-cairo py-8 text-highlight relative">
 			<div className="w-full lg:hidden flex justify-center items-center gap-5 text-gray-400 mt-3 mb-5">
 				<a
-					ref={link1}
-					href="http://linkedin.com"
+					href={linkedin}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
@@ -42,32 +37,21 @@ function Footer() {
 					></i>
 				</a>
 				<a
-					ref={link2}
-					href="http://github.com"
+					href={github}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<i className="fab fa-github text-3xl hover:text-highlight"></i>
 				</a>
 				<a
-					ref={link3}
-					href="http://twitter.com"
+					href={twitter}
 					target="_blank"
 					rel="noopener noreferrer"
 				>
 					<i className="fab fa-twitter text-3xl hover:text-highlight"></i>
 				</a>
 				<a
-					ref={link4}
-					href="http://instagram.com"
-					target="_blank"
-					rel="noopener noreferrer"
-				>
-					<i className="fab fa-instagram text-3xl hover:text-highlight"></i>
-				</a>
-				<a
-					ref={link5}
-					href="http://codepen.io"
+					href={codepen}
 					target="_blank"
 					rel="noopener noreferrer"
 				>

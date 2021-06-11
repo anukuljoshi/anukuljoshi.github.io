@@ -3,13 +3,11 @@ import React, { useRef, useEffect } from "react";
 import { gsap } from 'gsap';
 
 import SectionTitle from '../elements/SectionTitle';
-import ContactForm from "../contact/ContactForm";
+import ContactForm from "../elements/ContactForm";
+import { linkedin, twitter } from "../../utils/constants";
 
 function Contact() {
 	// social links
-	let link1 = useRef(null);
-	let link2 = useRef(null);
-	let link3 = useRef(null);
 	let contactForm = useRef(null);
 
 	useEffect(() => {
@@ -57,8 +55,7 @@ function Contact() {
 					</div>
 					<div className="w-full flex justify-center items-center gap-5 text-bluebg">
 						<a
-							ref={link1}
-							href="http://linkedin.com"
+							href={linkedin}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -68,20 +65,11 @@ function Contact() {
 							></i>
 						</a>
 						<a
-							ref={link2}
-							href="http://twitter.com"
+							href={twitter}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							<i className="fab fa-twitter text-3xl hover:text-text"></i>
-						</a>
-						<a
-							ref={link3}
-							href="http://instagram.com"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<i className="fab fa-instagram text-3xl hover:text-text"></i>
 						</a>
 					</div>
 				</div>

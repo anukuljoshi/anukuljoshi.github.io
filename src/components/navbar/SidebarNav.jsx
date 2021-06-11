@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import Resume from "../../images/Anukul_Joshi_CV.pdf";
+import { linkedin, github, twitter, codepen } from '../../utils/constants'
 
 function SidebarNav(props) {
 	const { sidebarVisible, setSidebarVisible } = props;
@@ -18,11 +19,6 @@ function SidebarNav(props) {
     let resume = useRef(null);
 
 	let links = useRef(null);
-	let link1 = useRef(null);
-	let link2 = useRef(null);
-	let link3 = useRef(null);
-	let link4 = useRef(null);
-	let link5 = useRef(null);
 
 	const handleLinkClick = () => {
 		console.log("link");
@@ -179,8 +175,7 @@ function SidebarNav(props) {
 
 					<div ref={links} className="flex gap-5 py-2 px-3">
 						<a
-							ref={link1}
-							href="http://linkedin.com"
+							href={linkedin}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
@@ -190,32 +185,21 @@ function SidebarNav(props) {
 							></i>
 						</a>
 						<a
-							ref={link2}
-							href="http://github.com"
+							href={github}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							<i className="fab fa-github text-3xl hover:text-highlight"></i>
 						</a>
 						<a
-							ref={link3}
-							href="http://twitter.com"
+							href={twitter}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
 							<i className="fab fa-twitter text-3xl hover:text-highlight"></i>
 						</a>
 						<a
-							ref={link4}
-							href="http://instagram.com"
-							target="_blank"
-							rel="noopener noreferrer"
-						>
-							<i className="fab fa-instagram text-3xl hover:text-highlight"></i>
-						</a>
-						<a
-							ref={link5}
-							href="http://codepen.io"
+							href={codepen}
 							target="_blank"
 							rel="noopener noreferrer"
 						>
