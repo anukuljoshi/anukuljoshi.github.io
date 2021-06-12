@@ -20,15 +20,11 @@ function Contact() {
 		})
 	}, []);
 
-	const handleLinkClick = () => {
-		console.log("link");
-	};
-
 	return (
 		<div id="contact" className="lg:px-32 md:px-20 px-5 font-cairo mb-32">
             <SectionTitle title={'Contact'}></SectionTitle>
-			<div ref={contactForm} className="lg:flex shadow-2xl">
-				<div className="lg:w-1/2 w-11/12 mx-auto bg-primary lg:px-10 px-8 py-10 flex flex-col justify-center items-center">
+			<div ref={contactForm} className="lg:flex">
+				<div className="lg:w-2/3 w-11/12 mx-auto bg-primary lg:px-10 px-8 py-10 flex flex-col justify-center items-center shadow-lg">
 					<h4 className="lg:text-5xl text-4xl font-bold text-bluebg lg:mb-5 mb-3">
 						Get in touch
 					</h4>
@@ -39,7 +35,7 @@ function Contact() {
 						<p className="">
 							Feel free to drop me a message using the contact
 							form or send a mail to{" "}
-							<strong className="text-bluebg">
+							<strong className="block text-xl text-bluebg">
 								anukuljoshi1@gmail.com
 							</strong>{" "}
 							or connect with me on one of my social media account.
@@ -51,10 +47,7 @@ function Contact() {
 							target="_blank"
 							rel="noopener noreferrer"
 						>
-							<i
-								className="fab fa-linkedin-in text-3xl hover:text-text"
-								onClick={handleLinkClick}
-							></i>
+							<i className="fab fa-linkedin-in text-3xl hover:text-text"></i>
 						</a>
 						<a
 							href={twitter}
@@ -65,9 +58,9 @@ function Contact() {
 						</a>
 					</div>
 				</div>
-				<div className="lg:w-1/2 w-11/12 mx-auto bg-foreground lg:px-10 px-8 py-6 flex flex-col justify-center ">
+				{/* <div className="lg:w-1/2 w-11/12 mx-auto bg-foreground lg:px-10 px-8 py-6 flex flex-col justify-center ">
 					<ContactForm></ContactForm>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

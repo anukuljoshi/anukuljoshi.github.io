@@ -20,10 +20,6 @@ function SidebarNav(props) {
 
 	let links = useRef(null);
 
-	const handleLinkClick = () => {
-		console.log("link");
-	};
-
 	let tl = useRef();
 
 	useEffect(() => {
@@ -181,7 +177,6 @@ function SidebarNav(props) {
 						>
 							<i
 								className="fab fa-linkedin-in text-3xl hover:text-highlight"
-								onClick={handleLinkClick}
 							></i>
 						</a>
 						<a

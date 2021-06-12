@@ -44,8 +44,10 @@ function ContactForm() {
 				></textarea>
 			</div>
 			<div className="text-center">
-				<button 
-                    className="px-3 py-1 border-2 border-text font-semibold text-text bg-foreground hover:text-foreground hover:bg-text cursor-pointer">
+				<button
+					type="submit"
+					className="px-3 py-1 border-2 border-text font-semibold text-text bg-foreground hover:text-foreground hover:bg-text cursor-pointer"
+				>
 					<i className="fa fa-paper-plane pr-3"></i>Send
 				</button>
 			</div>

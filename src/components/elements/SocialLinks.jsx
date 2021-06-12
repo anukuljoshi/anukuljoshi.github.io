@@ -4,10 +4,6 @@ import { linkedin, github, twitter, codepen } from '../../utils/constants';
 
 const SocialLinks = React.forwardRef((props, ref) => {
 
-	const handleLinkClick = () => {
-		console.log("link");
-	};
-
 	return (
 		<div
 			ref={ref}
@@ -21,7 +17,6 @@ const SocialLinks = React.forwardRef((props, ref) => {
 			>
 				<i
 					className="fab fa-linkedin-in text-2xl hover:text-secondary"
-					onClick={handleLinkClick}
 				></i>
 			</a>
 			<a
