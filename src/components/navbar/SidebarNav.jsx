@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 
 import { gsap } from "gsap";
 
-import Resume from "../../images/Anukul_Joshi_CV.pdf";
+import Resume from "../../images/ANUKUL_JOSHI_CV.pdf";
 import { linkedin, github, twitter, codepen } from '../../utils/constants'
 
 function SidebarNav(props) {
