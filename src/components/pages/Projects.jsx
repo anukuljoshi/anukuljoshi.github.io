@@ -7,8 +7,12 @@ import ProjectCardLeft from "../projects/ProjectCardLeft";
 import ProjectCardRight from "../projects/ProjectCardRight";
 
 import Sort from "../../images/projects/sort/main.png";
+import Full from "../../images/projects/sort/full.png";
 import Bubble from "../../images/projects/sort/bubble.png";
 import Merge from "../../images/projects/sort/merge.png";
+import Sorted from "../../images/projects/sort/sorted.png";
+import MobileMain from "../../images/projects/sort/mobile_main.png";
+import MobileSort from "../../images/projects/sort/mobile_sort.png";
 
 import DesktopLogin from "../../images/projects/social/desktop_login.png";
 import DesktopHome from "../../images/projects/social/desktop_home.png";
@@ -68,12 +72,20 @@ function Projects() {
 					"A web app built to visualize classic sorting algorithms.",
 					"Algorithms included are Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Quick Sort and Heap Sort.",
 				]}
-				photos={[Sort, Bubble, Merge]}
+				photos={[
+					Sort,
+					Full,
+					Bubble,
+					Merge,
+					Sorted,
+					MobileMain,
+					MobileSort,
+				]}
 				github={"https://github.com/anukuljoshi/sort-visualizer-v2"}
 				live={"https://anukuljoshi.github.io/sort-visualizer-v2/"}
 			></ProjectCardLeft>
 			<ProjectCardRight
-				name={"Social Club"}
+				name={"Twitter Clone"}
 				tech={["Django", "ReactJS"]}
 				info={[
 					"A social network website where users can create small text posts.",
@@ -89,7 +101,7 @@ function Projects() {
 					MobilePost,
 					MobileFollower,
 				]}
-				github={"https://github.com/anukuljoshi/sort-visualizer-v2"}
+				github={"https://github.com/anukuljoshi/django-social-club-dev"}
 				live={"http://anukuljoshi.pythonanywhere.com"}
 			></ProjectCardRight>
 			<h3

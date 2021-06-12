@@ -33,12 +33,6 @@ function Contact() {
 						Get in touch
 					</h4>
 					<div className="text-text text-center lg:mb-5 mb-3">
-						{/* <p className="mb-2">
-							Lorem ipsum dolor, sit amet consectetur adipisicing elit. Tenetur veritatis vel optio beatae aspernatur dolores praesentium ex sed, iure labore voluptatibus modi molestiae adipisci consectetur.
-						</p>
-						<p className="">
-							Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias harum, illo enim debitis veritatis temporibus dolorum facilis sapiente tempora. Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-						</p> */}
 						<p className="mb-2">
 							If you are interested in talking with me for a project collaboration, want to hire me or have a question for me,
 						</p>

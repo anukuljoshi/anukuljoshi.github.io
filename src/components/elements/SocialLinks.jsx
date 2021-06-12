@@ -13,9 +13,9 @@ const SocialLinks = React.forwardRef((props, ref) => {
 	return (
 		<div
 			ref={ref}
-			className="invisible hidden z-10 fixed left-5 top-0  lg:flex flex-col justify-center items-center gap-5 text-gray-500"
+			className="invisible hidden z-10 fixed left-5 top-0 lg:flex flex-col justify-center items-center gap-5 text-gray-400"
 		>
-			<div className="h-28 w-0.5 bg-gray-500"></div>
+			<div className="h-28 w-0.5 bg-gray-400"></div>
 			<a
 				href={linkedin}
 				target="_blank"
