@@ -82,7 +82,6 @@ function Home() {
 					{"anukul Joshi"}
 				</h1>
 				<h3
-					// ref={subTitle}
 					className="text-lg md:text-4xl font-titil font-black text-secondary -mt-2"
 				>
 					WEB DEVELOPER

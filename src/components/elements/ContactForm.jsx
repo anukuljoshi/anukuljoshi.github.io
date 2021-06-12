@@ -48,11 +48,6 @@ function ContactForm() {
                     className="px-3 py-1 border-2 border-text font-semibold text-text bg-foreground hover:text-foreground hover:bg-text cursor-pointer">
 					<i className="fa fa-paper-plane pr-3"></i>Send
 				</button>
-				{/* <input 
-                    className="px-3 py-1 border-2 border-text font-semibold text-text bg-foreground hover:text-foreground hover:bg-text cursor-pointer"
-                    type="submit" 
-                    value="Send" 
-                /> */}
 			</div>
 		</form>
 	);
