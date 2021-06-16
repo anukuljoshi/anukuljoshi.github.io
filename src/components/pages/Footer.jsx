@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 import { gsap } from "gsap";
-import { codepen, github, linkedin, twitter } from "../../exports/constants";
+import { codepen, github, linkedin, twitter, portfolio } from "../../exports/links";
 
 function Footer() {
 	let footer = useRef(null);
@@ -53,7 +53,7 @@ function Footer() {
 				</p>
 				<a
 					className="inline-block px-2 py-1 font-semibold border-2 border-highlight hover:bg-highlight hover:text-foreground"
-					href="https://github.com/anukuljoshi/portfolio"
+					href={portfolio}
 					target="_blank"
 					rel="noopener noreferrer"
 				>

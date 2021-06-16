@@ -4,7 +4,7 @@ import { gsap } from 'gsap';
 
 import SectionTitle from '../elements/SectionTitle';
 import ContactForm from "../elements/ContactForm";
-import { linkedin, twitter } from "../../exports/socials";
+import { linkedin, twitter } from "../../exports/links";
 
 function Contact() {
 	// social links

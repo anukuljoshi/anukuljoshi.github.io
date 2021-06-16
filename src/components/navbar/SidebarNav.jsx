@@ -3,7 +3,7 @@ import React, { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 
 import { Resume } from '../../exports/images';
-import { linkedin, github, twitter, codepen } from '../../exports/socials';
+import { linkedin, github, twitter, codepen } from '../../exports/links';
 
 function SidebarNav(props) {
 	const { sidebarVisible, setSidebarVisible } = props;
