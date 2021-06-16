@@ -1,7 +1,7 @@
 import React, { useRef, useEffect } from "react";
 
 import { gsap } from "gsap";
-import { codepen, github, linkedin, twitter } from "../../utils/constants";
+import { codepen, github, linkedin, twitter } from "../../exports/constants";
 
 function Footer() {
 	let footer = useRef(null);

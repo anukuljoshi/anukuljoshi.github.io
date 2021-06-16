@@ -1,6 +1,6 @@
 import React from "react";
 
-import { linkedin, github, twitter, codepen } from '../../utils/constants';
+import { linkedin, github, twitter, codepen } from '../../exports/socials';
 
 const SocialLinks = React.forwardRef((props, ref) => {
 

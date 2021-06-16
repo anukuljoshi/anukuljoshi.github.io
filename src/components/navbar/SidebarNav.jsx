@@ -2,8 +2,8 @@ import React, { useEffect, useRef } from "react";
 
 import { gsap } from "gsap";
 
-import Resume from "../../images/ANUKUL_JOSHI_CV.pdf";
-import { linkedin, github, twitter, codepen } from '../../utils/constants'
+import { Resume } from '../../exports/images';
+import { linkedin, github, twitter, codepen } from '../../exports/socials';
 
 function SidebarNav(props) {
 	const { sidebarVisible, setSidebarVisible } = props;

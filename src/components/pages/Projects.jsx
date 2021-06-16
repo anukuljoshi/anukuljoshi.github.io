@@ -5,23 +5,9 @@ import { gsap } from "gsap";
 import SectionTitle from "../elements/SectionTitle";
 import ProjectCardLeft from "../projects/ProjectCardLeft";
 import ProjectCardRight from "../projects/ProjectCardRight";
+import CodepenFrames from '../projects/CodepenFrames';
 
-import Sort from "../../images/projects/sort/main.png";
-import Full from "../../images/projects/sort/full.png";
-import Bubble from "../../images/projects/sort/bubble.png";
-import Merge from "../../images/projects/sort/merge.png";
-import Sorted from "../../images/projects/sort/sorted.png";
-import MobileMain from "../../images/projects/sort/mobile_main.png";
-import MobileSort from "../../images/projects/sort/mobile_sort.png";
-
-import DesktopLogin from "../../images/projects/social/desktop_login.png";
-import DesktopHome from "../../images/projects/social/desktop_home.png";
-import DesktopPost from "../../images/projects/social/desktop_post.png";
-import DesktopFollower from "../../images/projects/social/desktop_follower.png";
-import DesktopEdit from "../../images/projects/social/desktop_edit.png";
-import MobileHome from "../../images/projects/social/mobile_home.png";
-import MobilePost from "../../images/projects/social/mobile_post.png";
-import MobileFollower from "../../images/projects/social/mobile_follower.png";
+import { ProjectImages } from '../../exports/images';
 
 function Projects() {
 	let projectSubtitle = useRef(null);
@@ -72,15 +58,7 @@ function Projects() {
 					"A web app built to visualize classic sorting algorithms.",
 					"Algorithms included are Bubble Sort, Insertion Sort, Selection Sort, Merge Sort, Quick Sort and Heap Sort.",
 				]}
-				photos={[
-					Sort,
-					Full,
-					Bubble,
-					Merge,
-					Sorted,
-					MobileMain,
-					MobileSort,
-				]}
+				photos={ProjectImages.SortImages}
 				github={"https://github.com/anukuljoshi/sort-visualizer-v2"}
 				live={"https://anukuljoshi.github.io/sort-visualizer-v2/"}
 			></ProjectCardLeft>
@@ -91,16 +69,7 @@ function Projects() {
 					"A social network website where users can create small text posts.",
 					"Users can also follow each other and upvote/downvote posts.",
 				]}
-				photos={[
-					DesktopHome,
-					DesktopLogin,
-					DesktopPost,
-					DesktopFollower,
-					DesktopEdit,
-					MobileHome,
-					MobilePost,
-					MobileFollower,
-				]}
+				photos={ProjectImages.SocialImages}
 				github={"https://github.com/anukuljoshi/django-social-club-dev"}
 				live={"http://anukuljoshi.pythonanywhere.com"}
 			></ProjectCardRight>
@@ -114,42 +83,7 @@ function Projects() {
 				ref={codepenContainer}
 				className="w-11/12 mx-auto grid lg:grid-cols-2 grid-cols-1 gap-5 mb-20"
 			>
-				<iframe
-					height="400"
-					style={{ width: "100%" }}
-					scrolling="no"
-					title="infinite slide v2 (absolute position)"
-					src="https://codepen.io/anukuljoshi/embed/JjWBjKM?height=265&theme-id=dark&default-tab=result"
-					frameBorder="no"
-					loading="lazy"
-					allowFullScreen={true}
-				>
-					See the Pen{" "}
-					<a href="https://codepen.io/anukuljoshi/pen/JjWBjKM">
-						infinite slide v2 (absolute position)
-					</a>{" "}
-					by Anukul Joshi (
-					<a href="https://codepen.io/anukuljoshi">@anukuljoshi</a>)
-					on <a href="https://codepen.io">CodePen</a>.
-				</iframe>
-				<iframe
-					height="400"
-					style={{ width: "100%" }}
-					scrolling="no"
-					title="locked door"
-					src="https://codepen.io/anukuljoshi/embed/jOBvGEz?height=431&theme-id=dark&default-tab=result"
-					frameBorder="no"
-					loading="lazy"
-					allowFullScreen={true}
-				>
-					See the Pen{" "}
-					<a href="https://codepen.io/anukuljoshi/pen/jOBvGEz">
-						locked door
-					</a>{" "}
-					by Anukul Joshi (
-					<a href="https://codepen.io/anukuljoshi">@anukuljoshi</a>)
-					on <a href="https://codepen.io">CodePen</a>.
-				</iframe>
+				<CodepenFrames></CodepenFrames>	
 			</div>
 		</div>
 	);

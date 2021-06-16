@@ -17,7 +17,7 @@ import FixedBackground from './components/background/FixedBackground';
 
 function App() {
 	const [pageLoading, setPageLoading] = useState(true);
-	const [url, setUrl] = useState(window.location.href.split("#")[1] || 'home');
+	const [url, setUrl] = useState(window.location.href.split("#")[1]);
 
 	useEffect(() => {
 		gsap.registerPlugin(ScrollTrigger);
@@ -31,7 +31,9 @@ function App() {
 		if(pageLoading){
 			return 
 		}
-		window.location.href = `#${url}`;
+		if(url){
+			window.location.href = `#${url}`;
+		}
 	}, [pageLoading, url]);
 
 	return (

@@ -5,7 +5,7 @@ import { gsap } from 'gsap';
 import certificate from '../../svgs/undraw_certificate.svg';
 import working from '../../svgs/undraw_working_from_anywhere.svg';
 
-import { tech } from '../../utils/constants';
+import { tech } from '../../exports/constants';
 
 import SectionTitle from '../elements/SectionTitle';
 
