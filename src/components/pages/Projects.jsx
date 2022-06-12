@@ -51,6 +51,17 @@ function Projects() {
 			>
 				Projects
 			</h3>
+            <ProjectCardLeft 
+                name={"E-Commerce Website"}
+                tech={["Django", "Djangorestframework", "ReactJS", "Redux", "MaterialUI", "TailwindCSS"]}
+                info={
+                    [
+                        "An e-commerce store where users can buy products grouped in different categories",
+                        "Users can add or remove products in their cart",
+                        "Users can create new orders and add address for their orders"
+                ]}
+                photos={ProjectImages.ECommerceImages}
+            />
 			<ProjectCardLeft
 				name={"Sorting Visualizer"}
 				tech={["ReactJS", "TailwindCSS"]}
@@ -66,7 +77,7 @@ function Projects() {
 				name={"Twitter Clone"}
 				tech={["Django", "ReactJS"]}
 				info={[
-					"A social network website where users can create small text posts.",
+					"A social network website where users can create posts.",
 					"Users can also follow each other and upvote/downvote posts.",
 				]}
 				photos={ProjectImages.SocialImages}
